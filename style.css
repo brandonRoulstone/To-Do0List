@@ -1,6 +1,8 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 :root{
@@ -66,4 +68,20 @@
 
 .btn-sort{
     background-color: var(--lightColor);
+}
+
+.main-task-container{
+    padding: 5px;
+}
+
+.todo-container{
+    height: 200px;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.task--{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
