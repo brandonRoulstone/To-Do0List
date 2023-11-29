@@ -4,7 +4,6 @@ const sortTodos = document.getElementById("sortTodos");
 let taskStorage = document.getElementById("taskRoot");
 let date = new Date();
 
-
 const inputValues = [
     {
         id: 1,
@@ -40,7 +39,7 @@ function addToDo(newValue){
         console.log(i);
         taskStorage.innerHTML = `
         <div class="tab">
-        <input type="checkbox" />
+        <input type="checkbox" id="checked"/>
         <h4 class="li-name">${i.name}</h4>
         <button class="btn-remove">x</button>
         </div>
@@ -48,10 +47,22 @@ function addToDo(newValue){
     });
 
     console.log(newitem);
+    // let checkbox = document.getElementById("checked");
+    // checkbox.addEventListener("click", () => {
+    //     if(checkbox.value === false){
+    //         checkbox.value == true;
+    //         checkbox.style.textDecoration = "line-through"
+    //     }
+    // });
+
+    // console.log(checkbox);
 }
 
-let removebtn = document.getElementById("btn-remove");
+// let removebtn = document.getElementById("btn-remove");
 
+// removebtn.addEventListener("click", () => {
+//     inputValues.filter(item => item.name !== item.name)
+// })
 
 addBtn.addEventListener("click", () => addToDo(TodoInput.value));
 
