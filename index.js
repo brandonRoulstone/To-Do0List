@@ -4,12 +4,6 @@ const sortTodos = document.getElementById("sortTodos");
 let taskStorage = document.getElementById("taskRoot");
 let date = new Date();
 
-// const storage = JSON.stringify(myProducts);
-
-// localStorage.setItem("testJson", storage);
-
-// // Retrieving the products from localStorage
-// const products = JSON.parse(localStorage.getItem("testJson"));
 
 const inputValues = [
     {
@@ -31,23 +25,34 @@ console.log(parsedData);
 
 let newFilteredArr = [];
 
+
 function addToDo(newValue){
-    let newitem= newFilteredArr.push(inputValues);
+    let newitem= newFilteredArr.push(parsedData);
 
     for(let x of inputValues){
-        x.name = newValue.value;
+        console.log(x)
+        x.name = newValue;
         x.createdDate.getDay();
         x.completed = false;
     }
-//Returns undef for now
-    inputValues.map(settedItem => {
+    //Returns undef for now
+    inputValues.map(i => {
+        console.log(i);
         taskStorage.innerHTML = `
-        
-        `
+        <div class="tab">
+        <input type="checkbox" />
+        <h4 class="li-name">${i.name}</h4>
+        <button class="btn-remove">x</button>
+        </div>
+        `;
     });
-    console.log(newitem)
+
+    console.log(newitem);
 }
 
-addBtn.addEventListener("click", addToDo);
+let removebtn = document.getElementById("btn-remove");
+
+
+addBtn.addEventListener("click", () => addToDo(TodoInput.value));
 
 
