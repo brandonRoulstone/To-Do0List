@@ -26,7 +26,7 @@ let newFilteredArr = [];
 
 
 function addToDo(newValue){
-    let newitem= newFilteredArr.push(parsedData);
+    // let newitem= newFilteredArr.push(parsedData);
 
     for(let x of inputValues){
         console.log(x)
@@ -40,20 +40,21 @@ function addToDo(newValue){
         taskStorage.innerHTML = `
         <div class="tab">
         <input type="checkbox" id="checked"/>
-        <h4 class="li-name">${i.name}</h4>
+        <h4 class="li-name" id="todoTxt">${i.name}</h4>
         <button class="btn-remove">x</button>
         </div>
         `;
     });
 
-    console.log(newitem);
-    // let checkbox = document.getElementById("checked");
-    // checkbox.addEventListener("click", () => {
-    //     if(checkbox.value === false){
-    //         checkbox.value == true;
-    //         checkbox.style.textDecoration = "line-through"
-    //     }
-    // });
+    // console.log(newitem);
+    let txt = document.getElementById("todoTxt");
+    // txt.style.textDecoration = "line-through";
+    let checkbox = document.getElementById("checked");
+
+
+    checkbox.addEventListener("click", () => {
+    txt.style.textDecoration = "line-through";
+    });
 
     // console.log(checkbox);
 }
