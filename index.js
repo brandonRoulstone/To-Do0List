@@ -22,22 +22,22 @@ const parsedData = JSON.parse(localStorage.getItem("TodoKey"));
 console.log(parsedData);
 
 
-let newFilteredArr = [];
+// let newFilteredArr = [];
 
 
 function addToDo(newValue){
     // let newitem= newFilteredArr.push(parsedData);
 
     for(let x of inputValues){
-        console.log(x)
+        console.log(x);
         x.name = newValue;
         x.createdDate.getDay();
         x.completed = false;
     }
-    //Returns undef for now
+    //Returns task
     inputValues.map(i => {
         console.log(i);
-        taskStorage.innerHTML = `
+        taskStorage.innerHTML += `
         <div class="tab">
         <input type="checkbox" id="checked"/>
         <h4 class="li-name" id="todoTxt">${i.name}</h4>
@@ -46,15 +46,51 @@ function addToDo(newValue){
         `;
     });
 
-    // console.log(newitem);
     let txt = document.getElementById("todoTxt");
-    // txt.style.textDecoration = "line-through";
+
     let checkbox = document.getElementById("checked");
 
+    // Checks out todo item   
+    checkbox.addEventListener("click", (e) => {
+        
+        txt.style.textDecoration = "line-through";
 
-    checkbox.addEventListener("click", () => {
-    txt.style.textDecoration = "line-through";
+        for (let z of inputValues){
+            z.completed = true;
+
+            if(z.completed !== true){
+                
+                z.completed = false;
+
+                txt.style.textDecoration = "none";
+
+                console.log(z.completed);
+
+            } else if (z.completed === true) {
+
+                console.log("is completed : " + z.completed);
+                
+                checkbox.addEventListener("click", () => {
+
+                    txt.style.textDecoration = "none";
+
+                    z.completed = false;
+
+                    console.log("is removed from checked list");
+
+               });
+
+                // console.log("is completed : " + z.completed);
+            }
+        }
     });
+
+    // let awaitClick = async () => {
+    // }
+    
+    // checkbox.addEventListener("dblclick", () => {
+    //     txt.style.textDecoration = "none";
+    // });
 
     // console.log(checkbox);
 }
