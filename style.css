@@ -11,6 +11,8 @@
     --white: white;
     --black: black;
     --pointer: pointer;
+    --red: red;
+    --cardColor: rgb(0, 136, 255);
 }
 
 .container{
@@ -91,7 +93,8 @@
 .tab{
     display: flex;
     justify-content: center;
-    background-color: rgb(0, 136, 255);
+    background-color: var(--cardColor);
+    border-radius: 5px;
     text-align: center;
     padding: 5px;
     margin: 5px;
@@ -108,7 +111,7 @@
 }
 
 .btn-remove{
-    background-color:rgb(255, 0, 0);
+    background-color:var(--red);
     padding: 2px;
     border-radius: 3px;
     border: none;
