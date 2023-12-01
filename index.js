@@ -9,7 +9,7 @@ const inputValues = [
         id: 1,
         name: TodoInput.value,
         createdDate: date,
-        completed: false
+        completed: Boolean
     }
 ];
 
@@ -80,19 +80,9 @@ function addToDo(newValue){
 
                });
 
-                // console.log("is completed : " + z.completed);
             }
         }
     });
-
-    // let awaitClick = async () => {
-    // }
-    
-    // checkbox.addEventListener("dblclick", () => {
-    //     txt.style.textDecoration = "none";
-    // });
-
-    // console.log(checkbox);
 }
 
 // let removebtn = document.getElementById("btn-remove");
