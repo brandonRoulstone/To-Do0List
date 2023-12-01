@@ -180,7 +180,7 @@ function renderTasks() {
 
             <label for="${checkboxId}" class="checkbox-label">${item.name}</label>
 
-            <button data-id="${item.id}" class="btn-remove">x</button>
+            <button data-id="${item.id}" class="btn-remove"><i class="fa-solid fa-trash fa-xs" style="color: #ffffff;"></i></button>
 
         </div>
 
@@ -225,7 +225,7 @@ addBtn.addEventListener("click", () => {
 
         addToDo(TodoInput.value);
 
-        TodoInput.value = ""; // Clear input field after adding
+        TodoInput.value = "";
     }
 });
 
